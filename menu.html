@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3菜单</title>
+	<style>
+		ul{
+			list-style-type: none;
+		}
+		li {
+			width: 80px;
+			text-align: center;
+			background-color: #777;
+			margin: 2px;
+		}
+		.sidebar > li input{
+			position: absolute;
+			width: 100%;
+			height: 48px;
+			z-index: 10;
+			opacity: 0;
+		} 
+		.sidebar >li ul {
+			margin: 0;
+			list-style-type: none;
+			padding-left: 20px;
+			display: none;
+		}
+		.sidebar>li input:checked ~ ul{
+			display: block;
+			animation: opacityChange 1s linear;
+		}
+		.sidebar > li ul li:hover{
+			background-color: #eee;
+		}
+		.sidebar > li:hover{
+			background-color: #eee;
+		}
+		@keyframes opacityChange {
+			0%{
+				opacity: 0.3;
+			}
+			50%{
+				opacity: 0.6;
+			}
+			100%{
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<ul class="sidebar">
+		<li>
+			<input type="checkbox" >
+			<a >目录一</a>
+			<ul>
+				<li><a >子目录1</a></li>
+				<li><a >子目录2</a></li>
+			</ul>
+		</li>
+		<li>
+			<input type="checkbox">
+			<a >目录二</a>
+			<ul>
+				<li><a >子目录3</a></li>
+				<li><a >子目录4</a></li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
