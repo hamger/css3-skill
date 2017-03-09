@@ -119,7 +119,7 @@
     </div>
     <script>
     (function() {
-        if (typeof window.screenX === "number") {
+        if (typeof window.screenX === "number") { // IE不支持该属性
             // CSS transform变换应用
             var transform = function(element, value, key) {
                 key = key || "Transform";
@@ -149,7 +149,7 @@
                 transform(eleContainer, "rotateY(" + (-1 * 40 * indexPiece) + "deg)");
             });
         } else {
-            alert("你好，养猪场不是飞机场，是开不了战斗机的！");
+            alert("请使用最新版本的非IE浏览器！");
         }
     })();
     </script>
