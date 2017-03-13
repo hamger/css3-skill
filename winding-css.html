@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css3 winding</title>
+    <style>
+    #container {
+        width: 1000px;
+        height: 1000px;
+        border: 2px solid #0F80FF;
+        position: relative;
+    }
+    
+    #ball0 {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #746DFF;
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px #A6A9A9;
+        text-align: center;
+    }
+    
+    #ball1 {
+        position: absolute;
+        height: 60px;
+        width: 60px;
+        left: 60%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(0);
+        background-color: #6AFFD8;
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px #A6A9A9;
+        transform-origin: -116.7% 50%;
+        animation: rotate_ball1 6s linear infinite;
+        text-align: center;
+    }
+    
+    #ball2 {
+        position: absolute;
+        height: 60px;
+        width: 60px;
+        left: 40%;
+        top: 34%;
+        transform: translate(-50%, -50%) rotate(0);
+        background-color: #67FF3F;
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px #A6A9A9;
+        transform-origin: 216.7% 338.7%;
+        animation: rotate_ball1 8s linear infinite;
+        text-align: center;
+    }
+    
+    #ball3 {
+        position: absolute;
+        height: 60px;
+        width: 60px;
+        left: 35%;
+        top: 76%;
+        transform: translate(-50%, -50%) rotate(0);
+        background-color: #DB4D41;
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px #A6A9A9;
+        transform-origin: 300% -383%;
+        animation: rotate_ball1 10s linear infinite;
+        text-align: center;
+    }
+    
+    .info0 {
+        display: block;
+        padding: 32px 0;
+    }
+    
+    .info1 {
+        display: block;
+        padding: 22px 0;
+        animation: inherit;
+        animation-name: rotate_info1;
+        animation-direction: reverse;
+    }
+    
+    .info2 {
+        display: block;
+        padding: 22px 0;
+        animation: inherit;
+        animation-name: rotate_info1;
+        animation-direction: reverse;
+    }
+    
+    .info3 {
+        display: block;
+        padding: 22px 0;
+        animation: inherit;
+        animation-name: rotate_info1;
+        animation-direction: reverse;
+    }
+    
+    #ball1:hover {
+        animation-play-state: paused;
+    }
+    
+    #ball1:hover .info1 {
+        animation-play-state: paused;
+    }
+    
+    #ball2:hover {
+        animation-play-state: paused;
+    }
+    
+    #ball2:hover .info2 {
+        animation-play-state: paused;
+    }
+    
+    #ball3:hover {
+        animation-play-state: paused;
+    }
+    
+    #ball3:hover .info3 {
+        animation-play-state: paused;
+    }
+    
+    @keyframes rotate_ball1 {
+        to {
+            transform: translate(-50%, -50%) rotate(1turn);
+        }
+    }
+    
+    @keyframes rotate_info1 {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="ball0"><span class='info0'>前端</span></div>
+        <div id="ball1"><span class="info1">HTML</span></div>
+        <div id="ball2"><span class="info2">CSS</span></div>
+        <div id="ball3"><span class="info3">JS</span></div>
+    </div>
+</body>
+
+</html>
